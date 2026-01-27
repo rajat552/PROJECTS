@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar button {
+    padding: 6px 15px;
+    margin: 0 5px;
+    border: 1px solid #999;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+/* Main Container */
+.container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+}
+
+/* Color Boxes */
+.colors {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.button {
+    width: 70px;
+    height: 70px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+/* Color IDs */
+#grey {
+    background-color: grey;
+}
+
+#white {
+    background-color: white;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+
+
+
+/* Text */
+.container p {
+    font-size: 16px;
+    font-weight: bold;
+}
