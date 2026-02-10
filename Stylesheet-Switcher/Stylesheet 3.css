@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+    margin: 0;
+}
+h1 {
+    margin: 0;
+    padding-left: 10px;
+    font-size: 48px;
+    color: #099619;
+}
+header p{
+    font-size: 24px;
+    padding-left: 10px;
+}
+ul {
+    display: flex;
+    list-style: none;
+    padding: 10px;
+    background-color: #ddd;
+    gap: 12px;
+}
+
+li {
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+}
+
+/* Active button */
+li:nth-child(3) {
+    background-color: #12a36b;
+}
+p {
+    padding: 10px;
+    font-size: 24px;
+}
+.style-link {
+    color: #555;
+}

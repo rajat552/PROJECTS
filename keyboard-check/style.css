@@ -1,0 +1,119 @@
+/* Keyboard-Check styles (updated for accessibility & smoother transitions) */
+
+:root{
+  --bg-start: #0f172a; /* dark navy */
+  --bg-end: #0f4c81; /* blue */
+  --card-bg: rgba(255,255,255,0.06);
+  --accent: #ffd166;
+  --text: #e6eef8;
+  --muted: rgba(230,238,248,0.78);
+}
+
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,body{
+  margin:0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  min-height:100vh; /* ensure full viewport coverage */
+  background: linear-gradient(135deg,var(--bg-start), var(--bg-end));
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  transition: background 0.35s ease, background-color 0.35s ease, color 0.2s ease;
+}
+
+nav{
+  display:flex;
+  gap:1rem;
+  padding:1rem 2rem;
+  align-items:center;
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  padding:0.35rem 0.6rem;
+  border-radius:6px;
+  transition: background 0.18s, transform 0.12s, box-shadow 0.12s;
+  outline: none;
+}
+
+nav a[aria-current="page"], nav a:hover{
+  background: rgba(255,255,255,0.06);
+  transform:translateY(-2px);
+}
+
+nav a:focus-visible{
+  box-shadow: 0 0 0 3px rgba(109, 144, 255, 0.18);
+  transform:none;
+}
+
+.project{
+  min-height:calc(100vh - 72px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+
+#insert{
+  background:var(--card-bg);
+  padding:3rem 2.5rem;
+  border-radius:12px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.5);
+  max-width:720px;
+  width:100%;
+  text-align:center;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.key{
+  display:inline-block;
+  padding:1.2rem 1.6rem;
+  border-radius:10px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  box-shadow: 0 6px 18px rgba(2,6,23,0.5);
+  font-weight:700;
+  font-size:1.2rem;
+  color:var(--text);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s, color 0.12s;
+  cursor: default;
+}
+
+/* pressed state will be toggled by JS by adding .active class */
+.key.active{
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 3px 8px rgba(2,6,23,0.6) inset;
+  background: linear-gradient(180deg, rgba(255,209,102,0.16), rgba(255,209,102,0.08));
+  color: #061523; /* stronger contrast when active */
+}
+
+/* keyboard focus for better accessibility (works if element gets focus via tabindex or is a button) */
+.key:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255,209,102,0.18);
+}
+
+#insert .hint{
+  margin-top:1rem;
+  color: var(--muted);
+  font-size:0.95rem;
+}
+
+@media (max-width:520px){
+  #insert{
+    padding:2rem 1.2rem;
+  }
+  .key{
+    font-size:1rem;
+    padding:0.9rem 1.2rem;
+  }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important}
+}
+
